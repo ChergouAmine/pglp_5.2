@@ -62,7 +62,7 @@ public final class Personnel implements Personnels, Serializable {
         return this.dateDeNaissance;
     }
     
-    public int getNum() {
+    public int getNumero() {
         return this.numero;
     }
 }
