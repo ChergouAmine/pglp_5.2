@@ -7,10 +7,11 @@ public abstract class DAO<T> {
     private Connection connect;
     public DAO() {
         try {
-            connect = DriverManager.getConnection("jdbc:derby://localhost:1527/PersonnelTable;create=true");
+          System.out.println("ffff");
+            connect = DriverManager.getConnection("jdbc:derby:Personnel;create=true");
             java.sql.Statement prepare = connect.createStatement();
             
-            String query = "CREATE TABLE IF NOT EXISTS PersonnelTable( "
+            String query = "CREATE TABLE IF NOT EXISTS Personnel( "
                           + "id INT NOT NULL AUTO_INCREMENT, "
                           + "nom VARCHAR(255), "
                           + "prenom VARCHAR(255),"

@@ -13,8 +13,7 @@ public class PersonnelDAO extends DAO<Personnel> implements Serializable {
         try {
             Connection connect = super.getConnection();
             
-            PreparedStatement prepare = connect.prepareStatement("INSERT INTO "
-                    + "Personnel"
+            PreparedStatement prepare = connect.prepareStatement("INSERT INTO Personnel"
                     + "(nom,prenom,DateNaissance,numero) VALUES(?,?,?,?)");
             prepare.setString(1, obj.getNom());
             prepare.setString(2, obj.getPrenom());
@@ -55,8 +54,8 @@ public class PersonnelDAO extends DAO<Personnel> implements Serializable {
         try {
             Connection connect = super.getConnection();
             PreparedStatement prepare = connect.prepareStatement("UPDATE"
-                    + " PersonnelTable "
-                    + "SET prenom = ?, birth = ?, numero = ? "
+                    + " Personnel "
+                    + "SET prenom = ?, DateNaissance = ?, numero = ? "
                     + "WHERE nom = ?");
             prepare.setString(1, obj.getPrenom());
             prepare.setString(2, obj.getDate().toString());
